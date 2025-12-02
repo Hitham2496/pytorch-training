@@ -5,7 +5,7 @@ Otherwise, we have prepared an environment for you to use, which you can access 
 
 ### **Prerequisites**
 1. You need to have completed the Sanger farm course, and have a valid LSF group.
-2. You need to save the following file to your laptop as `kernel.json`:
+2. You need to save the following file to your laptop as `kernel.json` (also attached in the repository):
 ``` 
 {
  "argv": [
