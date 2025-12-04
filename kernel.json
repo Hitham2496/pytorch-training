@@ -1,0 +1,14 @@
+{
+ "argv": [
+  "/software/isg/pytorch-training/module_load.sh",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "pytorch_env",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
