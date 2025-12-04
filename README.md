@@ -3,13 +3,30 @@ These steps are for users of Sanger HPC (through the internal Jupyter servers), 
 
 Otherwise, we have prepared an environment for you to use, which you can access in the following way.
 
-### **Prerequisites**
-1. You need to have completed the Sanger farm course, and have a valid LSF group.
-2. You need to save the following file to your laptop as `kernel.json` (also attached in the repository):
+### **Prerequisites - installl the kernel for yourself on the farm**
+
+**You need to have completed the Sanger farm course, and have a valid LSF group.**
+
+1. Log onto a Sanger compute farm via `ssh`, in this example we will log onto farm22: `ssh farm22`
+2. Source the python virtual environment we will use for this course:
+```
+source /software/isg/pytorch-training/pytorch_venv/bin/activate
+```
+3. Install the Jupyter kernel required with the following command:
+```
+python3 -m ipykernel install --user --name=pytorch_env
+```
+This will create a file (among others) in your home directory at the location:
+```
+~/.local/jupyter/kernel/pytorch_env/kernel.json
+```
+This file needs editing before we can proceed, you can edit using the terminal or VSCode etc.
+
+The file `kernel.json` needs to look as below (i.e. you change the first line of the `argv` options):
 ``` 
 {
  "argv": [
-  "/nfs/users/nfs_h/hh12/pytorch-training/module_load.sh",
+  "/software/isg/pytorch-training/module_load.sh",
   "-m",
   "ipykernel_launcher",
   "-f",
@@ -22,7 +39,12 @@ Otherwise, we have prepared an environment for you to use, which you can access 
  }
 }
 ```
-The file can also be found in `**/nfs/users/nfs_h/hh12/pytorch-training/**` which should be readable by all attendees.
+The file can also be found in `**/software/isg/pytorch-training/kernel.json**` which should be readable by all attendees.
+
+So if it is easier than editing the file, you can simply copy it e.g.
+```
+cp /software/isg/pytorch-training/kernel.json ~/.local/jupyter/kernel/pytorch_env/kernel.json
+```
 
 ### Using the internal jupyter server
 1. Navigate to a Sanger internal jupyter server
@@ -39,7 +61,8 @@ The file can also be found in `**/nfs/users/nfs_h/hh12/pytorch-training/**` whic
    * Note: if the small farm `gen22` becomes too busy, we may need to use `farm22` in some parts.
    * You must choose a valid LSF group to access Jupyter.
 ![](screenshot_home.png)
-5. For the **advanced options**, select ‘Load from file’ and upload the saved `kernel.json` file from earlier:
+5. For the **advanced options**, select ‘Load from file’ and upload the saved `kernel.json` file from earlier
+or paste the path to your copy of it on the farm (this step may not be necessary)
 ![](screenshot_advanced.png)
 
 You should then be able to open a Jupyter notebook.
