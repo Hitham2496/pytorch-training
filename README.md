@@ -18,7 +18,7 @@ python3 -m ipykernel install --user --name=pytorch_env
 ```
 This will create a file (among others) in your home directory at the location:
 ```
-~/.local/jupyter/kernel/pytorch_env/kernel.json
+~/.local/jupyter/kernels/pytorch_env/kernel.json
 ```
 This file needs editing before we can proceed, you can edit using the terminal or VSCode etc.
 
@@ -43,7 +43,7 @@ The file can also be found in `**/software/isg/pytorch-training/kernel.json**` w
 
 So if it is easier than editing the file, you can simply copy it e.g.
 ```
-cp /software/isg/pytorch-training/kernel.json ~/.local/jupyter/kernel/pytorch_env/kernel.json
+cp /software/isg/pytorch-training/kernel.json ~/.local/jupyter/kernels/pytorch_env/kernel.json
 ```
 
 ### Using the internal jupyter server
