@@ -1,4 +1,7 @@
 # Setting up a PyTorch Environment
+
+**IF YOU HAVE A WORKING PYTORCH ENVIRONMENT, CONTINUE TO USE THAT INSTEAD OF CREATING A NEW ONE WITH THESE INSTRUCTIONS**
+
 These steps are for users of Sanger HPC (through the internal Jupyter servers), if you are using your own/external compute resources, the steps will likely be similar but will be applied differently. For setting up your own environment we recommend the internal documentation page: https://ssg-confluence.internal.sanger.ac.uk/spaces/FARM/pages/210700883/How+to+create+a+GPU+capable+environment
 
 Otherwise, we have prepared an environment for you to use, which you can access in the following way.
